@@ -29,7 +29,7 @@ public class LoginController extends HttpServlet {
         HttpSession session = request.getSession(false);
         
         if(session!=null&&session.getAttribute("username")!=null){
-            request.getRequestDispatcher(Constant.Path.HOME)
+            request.getRequestDispatcher(Constant.Path.DASHBOARD)
                     .forward(request, response);
             return;
         }
@@ -45,7 +45,7 @@ public class LoginController extends HttpServlet {
                     session = request.getSession(true);
                     session.setAttribute("username", cookie.getValue());
                     
-                    request.getRequestDispatcher(Constant.Path.HOME)
+                    request.getRequestDispatcher(Constant.Path.DASHBOARD)
                             .forward(request, response);
                     return;
                 }
@@ -86,13 +86,13 @@ public class LoginController extends HttpServlet {
         
         if(isSuccess){
             HttpSession session = request.getSession(true);
-            session.setAttribute("username", username);
+            session.setAttribute(Constant.SESSION_USERNAME, username);
 
             if(isRememberMe){
                 saveRemeberMe(response, username);
             }
            
-            request.getRequestDispatcher(Constant.Path.HOME).forward(request, response);
+            request.getRequestDispatcher(Constant.Path.DASHBOARD).forward(request, response);
         }else{
             alertMsg = "Username or password isn't correct";
             request.setAttribute("alert", alertMsg);
@@ -101,7 +101,7 @@ public class LoginController extends HttpServlet {
     }
     
     private void saveRemeberMe(HttpServletResponse response, String username){
-        Cookie cookie = new Cookie("username", username);
+        Cookie cookie = new Cookie(Constant.COOKIE_REMEMBER, username);
         cookie.setMaxAge(30*60);
         response.addCookie(cookie);
     }

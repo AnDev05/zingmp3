@@ -11,10 +11,10 @@
 <head>
 
     <title>Register Page</title>
-
+    <script src="./public/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="./public/js/bootstrap.min.js"/>
     <link type="text/css" rel="stylesheet" href="./public/css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="./public/css/login_style.css"/>
-    
    
 </head>
 <body class="my-login-page">
@@ -73,8 +73,6 @@
     </div>
 </section>
 
-<script src="./public/js/jquery-3.3.1.min.js"></script>
-<script src="./public/js/bootstrap.min.js"></script>
 <script>
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );

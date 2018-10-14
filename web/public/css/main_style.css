@@ -1,0 +1,59 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 14, 2018, 10:17:34 AM
+    Author     : lenovo
+*/
+.table-fixed{
+    margin-top: 20px;
+}
+.table-fixed tbody {
+overflow-y: auto;
+width: 100%;
+}
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+display: block;
+}
+.table-fixed tr:after {
+content: "";
+display: block;
+visibility: hidden;
+clear: both;
+}
+.table-fixed tbody td,
+.table-fixed thead > tr > th {
+float: left;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td {
+font-size: .9em;
+font-weight: 400;
+border-bottom: 0;
+letter-spacing: 1px;
+vertical-align: top;
+padding: 8px;
+background:#f14444;
+text-transform: uppercase;
+color: #ffffff;
+border-radius: 3px;
+}
+
+.main-container{
+    width: 100%;
+    display: table;
+    clear: both;
+}
+.column{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+}
